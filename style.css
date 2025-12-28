@@ -1,22 +1,14 @@
-/* ================= VARIABLES ================= */
-:root {
-  --primary: #8B1E2D;
-  --gold: #D4AF37;
-  --text-main: #2D2D2D;
-  --text-secondary: #6B7280;
-  --bg-light: #F9FAFB;
-}
 
-/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+
 body {
   font-family: 'Inter', sans-serif;
-  color: var(--text-main);
+  color: #2D2D2D;
   line-height: 1.6;
 }
 
@@ -25,7 +17,7 @@ h1, h2, h3 {
 }
 
 h2 {
-  color: var(--primary);
+  color: #8B1E2D;
 }
 
 .container {
@@ -34,7 +26,7 @@ h2 {
   padding: 0 20px;
 }
 
-/* ================= HEADER ================= */
+
 .header {
   background: white;
   box-shadow: 0 7px 10px rgba(0,0,0,0.1);
@@ -54,87 +46,38 @@ h2 {
 .logo {
   font-size: 22px;
   font-weight: 700;
-  color: var(--primary);
+  color: #8B1E2D;
 }
 
 .nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: var(--text-main);
+  color: #2D2D2D;
   font-weight: 500;
 }
 
 .nav a:hover {
-  color: var(--primary);
+  color: #8B1E2D;
 }
 
+
 .btn-primary {
-  background: var(--primary);
+  background: #8B1E2D;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
 }
 
-/* ================= HERO / BIENVENUE ================= */
-.bienvenue {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding-top: 100px;
-  background-image: url('ChatGPT\ Image\ 27\ déc.\ 2025\,\ 21_56_13.png'); /* chemin image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-}
-
-/* Overlay sombre */
-.bienvenue::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  z-index: 0;
-}
-
-/* Contenu texte */
-.bienvenue-text {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-}
-
-/* Animations */
-.bienvenue h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
-}
-
-.bienvenue p {
-  margin-bottom: 30px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1.2s ease forwards;
-}
-
 .btn-gold {
-  background: var(--gold);
+  background: #D4AF37;
   color: black;
   padding: 12px 25px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1.4s ease forwards;
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-gold:hover {
@@ -142,19 +85,66 @@ h2 {
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* creation des animation personaliser */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+.bienvenue {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  background-image: url('assets/images/transit/boursse.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
 }
 
-/* section*/
+/* overlay sombre */
+.bienvenue::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 0;
+}
+
+/* contenu */
+.bienvenue-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+/* état normal */
+.bienvenue h1,
+.bienvenue p,
+.bienvenue .btn-gold {
+  transition: all 0.6s ease;
+}
+
+.bienvenue h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  transform: translateY(20px);
+}
+
+.bienvenue p {
+  margin-bottom: 30px;
+  transform: translateY(25px);
+}
+
+.bienvenue .btn-gold {
+  transform: translateY(30px);
+}
+
+/* animation au hover */
+.bienvenue:hover h1,
+.bienvenue:hover p,
+.bienvenue:hover .btn-gold {
+  transform: translateY(0);
+}
+
+
 .about,
 .services {
   padding: 80px 0;
@@ -162,12 +152,13 @@ h2 {
 }
 
 .about {
-  background: var(--bg-light);
+  background: #F9FAFB;
 }
 
 .services {
   background: white;
 }
+
 
 .services-grid {
   display: flex;
@@ -177,20 +168,20 @@ h2 {
 }
 
 .service-card {
-  background: var(--bg-light);
+  background: #F9FAFB;
   padding: 30px;
   border-radius: 12px;
   flex: 1 1 45%;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card h3 {
-  color: var(--primary);
+  color: #8B1E2D;
   margin-bottom: 15px;
 }
 
 .service-card a {
-  color: var(--primary);
+  color: #8B1E2D;
   font-weight: 500;
   text-decoration: none;
 }
@@ -200,9 +191,9 @@ h2 {
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* guide */
+
 .guide {
-  background: var(--primary);
+  background: #8B1E2D;
   color: white;
   text-align: center;
   padding: 80px 20px;
@@ -212,7 +203,7 @@ h2 {
   margin: 20px 0;
 }
 
-/* pied de page*/
+
 .footer {
   background: #111;
   color: #ccc;
@@ -220,4 +211,3 @@ h2 {
   padding: 30px 20px;
   font-size: 14px;
 }
-
