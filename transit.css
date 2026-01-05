@@ -1,12 +1,4 @@
 
-/* declaration des variable */
-.root{
-  --primary: #8B1E2D;
-  --gold: #D4AF37;
-  --text-main: #2D2D2D;
-  --text-secondary: #6B7280;
-  --bg-light: #F9FAFB;
-}
 /* reset */
 *{
     margin: 0;
@@ -15,7 +7,7 @@
 }
 body {
   font-family: 'Inter', sans-serif;
-  color: var(--text-main);
+  color:  #2D2D2D;
   line-height: 1.6;
 }
 
@@ -24,7 +16,7 @@ h1, h2, h3 {
 }
 
 h2 {
-  color: var(--primary);
+  color: #8B1E2D;
 }
 
 header{
@@ -165,4 +157,9 @@ margin-top: 25px;
    text-align: center;
    font-size: 14px;
     padding: 30px 20px;
+}
+.service .role{
+    /* border: #000000 solid 2px; */
+    text-align: center;
+    margin: 10px 290px;
 }
